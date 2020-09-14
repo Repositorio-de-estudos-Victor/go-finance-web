@@ -1,7 +1,11 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 interface ContainerProps {
   size?: 'small' | 'large';
+}
+
+interface FormProps {
+  selectedProps: boolean;
 }
 
 export const Container = styled.div<ContainerProps>`
@@ -20,8 +24,14 @@ export const Container = styled.div<ContainerProps>`
       a {
         color: #fff;
         text-decoration: none;
+        /* text-decoration-color: #ff872c; */
         font-size: 16px;
         transition: opacity 0.2s;
+        ${(props: FormProps) =>
+    props.selectedProps &&
+    css`
+            font-weight: bold;
+          `}
 
         & + a {
           margin-left: 32px;
