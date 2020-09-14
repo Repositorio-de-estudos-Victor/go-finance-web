@@ -11,16 +11,12 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ size = 'large' }: HeaderProps) => {
-  const [selectedMenu, setSelectedMenu] = useState(false);
-
   return (
     <Container size={size}>
       <header>
         <img src={Logo} alt="GoFinances" />
         <nav>
-          <Link selectedProps={selectedMenu} to="/">
-            Listagem
-          </Link>
+          <Link to="/">Listagem</Link>
           <Link to="/import">Importar</Link>
         </nav>
       </header>
